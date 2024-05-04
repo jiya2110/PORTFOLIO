@@ -1,0 +1,131 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("Background.jpg");
+    overflow: hidden;
+}
+
+.card {
+    display: grid;
+    position: relative;
+    right:80px;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 250px 20px;
+    grid-template-areas: "image" "text";
+    border-radius: 18px;
+    background: #1d1d1d;
+    color: white;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.9);
+    font-family: roboto;
+    text-align: justify;
+    cursor: pointer;
+    margin: 30px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.rgb::after {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000 0%,
+            #ff9a00 10%,
+            #d0de21 20%,
+            #4fdc4a 30%,
+            #3fdad8 40% #2fc9e2 50%,
+            #1c7fee 60%,
+            #5f15f2 70%,
+            #ba0cf8 80%,
+            #fb07d9 90%,
+            #ff0000 100%) repeat 0% 0% / 300% 100%;
+    position: absolute;
+    inset: -3px;
+    border-radius: 16px;
+    filter: blur(8px);
+    transform: translateZ(-1px);
+    animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.js-tilt-glare {
+    border-radius: 18px;
+}
+
+.card-image {
+    grid-area: image;
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url("image.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+
+.card-text {
+    grid-area: text;
+    margin: 25px;
+    transform: translateZ(30px);
+}
+
+.card-text .date {
+    color: rgb(255, 7, 110);
+    font-size: 13px;
+}
+
+.card-text p {
+    color: grey;
+    font-size: 14px;
+    font-weight: 30;
+}
+
+.card-text h2 {
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    Left: 50%;
+    transform: translate(-50%,
+            -50%);
+}
+.container a{
+    text-decoration: none;
+}
+.button {
+    position: relative;
+    bottom:-3px;
+    left:600px;
+    text-align: center;
+    width: 200px;
+    padding: 14px;
+    font-size: 25px;
+    color: whitesmoke;
+    font-family: poppins;
+    font-weight: 200;
+    border: 3px solid #15f4ee;
+    Letter-spacing: 9px;
+    /* cursor: pointer; */
+    border-radius: 40px;
+    transition: 1s;
+}
+
+.button:hover {
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+        0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
